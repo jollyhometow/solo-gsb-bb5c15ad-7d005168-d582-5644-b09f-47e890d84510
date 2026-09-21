@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      ARCHIVE_DB_PATH: /data/archive.db
+    volumes:
+      - archive-data:/data
+    restart: unless-stopped
+
+volumes:
+  archive-data:
